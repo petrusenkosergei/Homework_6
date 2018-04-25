@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Art.Lebedev</title>
-    <link href="styles/logo.css" rel="stylesheet" />
+    <link href="styles/logoLebedev.css" rel="stylesheet" />
+    <link href="styles/todoList.css" rel="stylesheet" />
 </head>
 <body>
 <div class="logoLebedev">
@@ -11,6 +12,15 @@
     <div class="logo__initials">Art.Lebedev</div>
 </div>
 </div>
+<div class="todoList">
+    <input type="text" name="key" placeholder="Введите списки дел" id="typeCase"></input>
+    <input type="button" class="primary" value="Добавить список" id="addCase" />
+    <input type="button" class="remove" value="Очистить список" id="deleteCase" />
+    <h1>To Do List:</h1>
+    <ol id="list">
+    </ol>
+</div>
 <script src="js/logoLebedev.js"></script>
+<script src="js/todoList.js"></script>
 </body>
 </html>

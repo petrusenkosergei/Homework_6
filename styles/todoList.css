@@ -1,0 +1,55 @@
+.List_TextStyle{
+    text-decoration:none;
+}
+.List_TextStyle:nth-child(3n){
+    color: red;
+    font-size: 28px;
+}
+.List_TextStyleLined{
+    text-decoration:line-through;
+}
+
+.List_TextStyleLined:nth-child(3n){
+    color: red;
+    font-size: 28px;
+}
+.primary{
+    background-color: blue;
+    font-size: 18px;
+    color: white;
+}
+.remove{
+    background-color: red;
+    font-size: 18px;
+    color: white;
+}
+.logotip {
+    transition: 5s;
+    background-color: rgb(100, 100, 100);
+}
+#list {
+    list-style: none;
+    counter-reset: li;
+    padding-left: 0px;
+}
+#list li {
+    position: relative;
+    margin-bottom: 1.5em;
+    border: 3px solid #CADFCF;
+    padding: 0.6em;
+    border-radius: 4px;
+    background: #FEFEFE;
+}
+#list li:before {
+    position: absolute;
+    top: -0.7em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    font-size: 16px;
+    font-weight: bold;
+    color: #DCC24B;
+    background: #FEFEFE;
+    border-radius: 50%;
+    counter-increment: li;
+    content: counter(li);
+}

@@ -1,19 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
 
-    var logoLebedev = document.getElementById('als-logoLebedev');
-    var colorGeneratorConstant = 100000000;
-    function randomCount() {
-        return Math.floor(Math.random()*colorGeneratorConstant);
+document.addEventListener('DOMContentLoaded', function(){
+    var logo = document.getElementById('als-logoLebedev');
+
+    function changeBackground(color) {
+        logo.style.backgroundColor = color;
     }
 
-    function Gradient() {
-        randomColor = Math.floor(Math.random()*colorGeneratorConstant);
-        logoLebedev.style.background = ('radial-gradient(at top, ' + "#" + (randomColor + randomCount()) + ', ' + "#" + (randomColor + randomCount()) + ')');}
-    logoLebedev.addEventListener('mouseenter', Gradient, false);
-    setInterval(function () {
-        Gradient();
+    function getRandomColor () {
+        var r=Math.floor(Math.random() * (256));
+        var g=Math.floor(Math.random() * (256));
+        var b=Math.floor(Math.random() * (256));
+        return '#' + r.toString(16) + g.toString(16) + b.toString(16);
+    }
+
+    logo.addEventListener('mouseenter', function() {
+        logo.classList.remove('logoLebedev__als-logoLebedev');
+        changeBackground(getRandomColor());
+        setTimeout(function(){logo.classList.add('logoLebedev__als-logoLebedev');},2000);
+    });
+    setInterval(function(){
+        changeBackground(getRandomColor());
     }, 1500)
 
 });
-
-
